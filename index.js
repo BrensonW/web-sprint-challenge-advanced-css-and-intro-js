@@ -284,16 +284,21 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(name, years, genre, nationality, bio){
+// function addArtist(name, years, genre, nationality, bio){
  
-  id=artists.length;
-  artists.push({id, name, years, genre, nationality, bio});
-return artists;
+//   id=artists.length;
+//   artists.push({id, name, years, genre, nationality, bio});
+// return artists;
     
 
-  }
-console.log(addArtist('Brenson Whorley', '1998-????', 'Web Design', 'American', 'Raised up in an Apostolic/Pentecoastal chuch, Brenson is a musician, and loves to learn new things.'));
+//   }
+// console.log(addArtist('Brenson Whorley', '1998-????', 'Web Design', 'American', 'Raised up in an Apostolic/Pentecoastal chuch, Brenson is a musician, and loves to learn new things.'));
 
+function addArtist(artist){
+  artists.push(artist);
+  return artists;
+}
+console.log(addArtist({id:20, name:'Brenson Whorley', years:'1998-????', genre:'Web Design', nationality:'American', bio:'Raised up in an Apostolic/Pentecoastal chuch, Brenson is a musician, and loves to learn new things.'}))
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
     (1) artists array 
@@ -302,11 +307,11 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(artists, painting){
+function lotsOfArt(artists){
 const moreThan100 = [];
 for( i = 0; i < artists.length; i++){
  
-  if(artists[i]['paintings'] >= 100){
+  if(artists[i].paintings >= 100){
     moreThan100.push(artists[i].name);
     
   }
